@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tabbar>
+    <row>
+        <tab id="tab_a1" width="100px">Tab-a1</tab>
+        <tab id="tab_a2" width="100px" selected="1">Tab-a2</tab>
+        <tab id="tab_a3" width="100px">Tab-a3</tab>
+    </row>
+</tabbar>

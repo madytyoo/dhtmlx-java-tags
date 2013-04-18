@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiResourceLocking="false" privileged="true" useHttpOnly="true">
+    <ResourceLink name="jdbc/phpBB"
+                  global="jdbc/phpBB"
+                  type="javax.sql.DataSource"/>
+</Context>

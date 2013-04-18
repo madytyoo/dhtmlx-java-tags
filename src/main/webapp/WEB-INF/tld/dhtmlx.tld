@@ -1,0 +1,2402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE taglib PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_2.dtd">
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed  under the  License is distributed on an "AS IS" BASIS,
+    WITHOUT  WARRANTIES OR CONDITIONS  OF ANY KIND, either  express  or
+    implied.
+
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>dhtmlx-tag</short-name>
+    <uri>http://www.mylaensys.com/dhtmlx</uri>
+
+    <tag>
+        <name>body</name>
+        <display-name>dhtmlx:body</display-name>
+        <description>
+            Container tag for DHTMLX components. All component tags must be declared within this tag.
+        </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.BodyTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <description>Name of the javascript function used to initialize the declared components</description>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>skin</name>
+            <description>Sets the appearance. Predefined skins are: dhx_skyblue (default), dhx_blue, dhx_black and dhx_web.</description>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imagePath</name>
+            <description>Path to image folder.</description>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>Name of the resource bundle properties file</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>accordion</name>
+        <display-name>dhtmlx:accordion</display-name>
+        <description>
+            Accordion is a component that provides an easy and effective way of placing different types of content on a single page.
+            It's a very flexible and easy-to-use content manager, compatible with other components that can be attached to Accordion without any difficulties (supports only vertical layout).
+            Accordion menus are often used as a website’s main navigation. In this way, it acts much like Navigation Tabs, as menu items are collapsed when a new panel is clicked. Where the Navigation Tabs are most often used horizontally, Accordion menus are used vertically.
+            They can however, function quite well as sub-navigation for a specific section of a website.
+        </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.AccordionTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the accordion</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>The HTML object of the page to which the accordion is attached</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>mode</name>
+            <description>Sets the accordion mode. Valid values are <b>single</b> (default) and <b>multi</b>. By setting Single Mode the user clicks on a collapsed item expands this item, and collapses the one that was expanded before.
+            Setting Multi Mode when the end-user clicks on a collapsed item expands this item.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>openItem</name>
+            <description>Initial open item</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onBeforeActive</name>
+            <description>User defined function invoked when the user clicks on an item, but before this item becomes active and open</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onActive</name>
+            <description>User defined function invoked when the user clicks on an item and it becomes active</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onDock</name>
+            <description>User defined function invoked when a window docks into the accordion</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onUnDock</name>
+            <description>User defined function invoked when the accordion cell undocks into a window</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>accordioncell</name>
+        <display-name>dhtmlx:accordioncell</display-name>
+        <description>Represents an accordion cell</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.AccordionCellTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the cell</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>Attaches an HTML object to a cell</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Sets item's header</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>Attaches an URL to a cell</description>
+            <name>url</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>                         
+    </tag>
+
+
+    <tag>
+        <name>layout</name>
+        <display-name>dhtmlx:layout</display-name>
+        <description>
+            Layout is a component that provides powerful and efficient solution for building web interfaces, allowing to programmatically
+            define interface structure, including layout of elements and their sizes.
+            Layout provides configurable skins and more than 20 patterns, margins and sizing options, such as fixed size or autosize,
+            some actions and effects.
+        </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.LayoutTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the layout</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>pattern</name>
+            <description>The name of a layout's pattern.</description>
+            <required>true</required>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>The HTML object of the page to which the layout is attached</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <!-- Events -->
+        <attribute>
+            <name>onDblClick</name>
+            <description>User defined function invoked when an item's header is double-clicked</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>onExpand</name>
+            <description>User defined function invoked when an item is expanded</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>onCollapse</name>
+            <description>User defined function invoked when an item is collapsed</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>onResizeFinish</name>
+            <description>User defined function invoked when resizing is finished</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>onPanelResizeFinish</name>
+            <description>User defined function invoked when resizing of a panel is finished</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>onContentLoaded</name>
+            <description>User defined function invoked when the content is loaded</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>onDock</name>
+            <description>User defined function invoked when a window docks into the layout</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onUnDock</name>
+            <description>User defined function invoked when the layout cell undocks into a window</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>layoutcell</name>
+        <display-name>dhtmlx:layoutcell</display-name>
+        <description>Represents a layout cell</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.LayoutCellTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the cell</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>Attaches an HTML object to a cell</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>url</name>
+            <description>Attaches an URL to a cell</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Sets item title</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>width</name>
+            <description>Sets cell width</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>height</name>
+            <description>Sets cell height</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>fixWidth</name>
+            <description>Disable/enable cell width resize</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>fixHeight</name>
+            <description>Disables/enablse cell height resize</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>hideHeader</name>
+            <description>Hides the item header </description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>tabbar</name>
+        <display-name>dhtmlx:tabbar</display-name>
+        <description>The tabbar component provide a clear visual indication of what content can be organized in a page, displaying contents when the corresponding tab is clicked.</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.TabbarTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the tabbar</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>The HTML object of the page to which the tabbar is attached</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>mode</name>
+            <description>Position of tabbar. Valid values are top, right, left, bottom. The default is top</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hrefMode</name>
+            <description>Sets the mode of loading of external content iframe (or iframes-on-demand). Valid values are: iframe, iframes and ajax</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>enableCloseButton</name>
+            <description>Enables close button on tabs</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>tabActive</name>
+            <description>Initial Selected Tab</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onSelect</name>
+            <description>User defined function invoked when a tab is selected</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onTabClose</name>
+            <description>User defined function invoked when a tab is closed</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onTabContentLoaded</name>
+            <description>User defined function invoked when the content of a tab is loaded</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+     <tag>
+        <name>tab</name>
+        <display-name>dhtmlx:tab</display-name>
+        <description>Represents tab.</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.TabTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the tab</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Sets tab text</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>Attaches an HTML object to a tab</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+         <attribute>
+                 <name>width</name>
+             <description>Sets tab width</description>
+             <required>false</required>
+         </attribute>
+        <attribute>
+            <name>url</name>
+            <description>Attaches an URL to a tab</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+         <attribute>
+             <name>hasRole</name>
+             <description>Security constraint based on user role</description>
+             <required>false</required>
+             <rtexprvalue>true</rtexprvalue>
+         </attribute>
+         <attribute>
+             <name>hasPermission</name>
+             <description>Security constraint based on user permissions</description>
+             <required>false</required>
+             <rtexprvalue>true</rtexprvalue>
+         </attribute>         
+    </tag>
+
+    <tag>
+        <name>grid</name>
+        <display-name>dhtmlx:grid</display-name>
+        <description>
+            The grid component displays a collection of items with multiple attributes in a
+            data table to make the data easy to filter, search and sort.            
+        </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.GridTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the grid</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>The HTML object of the page to which the grid is attached</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLS</name>
+            <description>User defined function invoked before the request for a new XML was sent to the server.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLE</name>
+            <description>User defined function invoked when items are available in the grid.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onRowSelect</name>
+            <description>User defined function invoked when a row in the grid is selected.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onRowDblClicked</name>
+            <description>User defined function invoked when right after a row was double clicked</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>init</name>
+            <description>Perform initialization true|false default true</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>xml</name>
+            <description>load tabbar from xml file</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>column</name>
+        <display-name>dhtmlx:column</display-name>
+        <description>Grid column item</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ColumnTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Column name (id)</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>header</name>
+            <description>Column header</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>type</name>
+            <description>Sets the column type. Valid types are: 'ro' (read only), 'ed' (simple editor), 'txt' text editor, 'ch' checkbox, 'ra' radio button, 'coro' select box , 'co' combobox , 'img' image, 'dhxCalendar' calendar.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>align</name>
+            <description>Sets column alignment. Possible values are: 'right', 'left', 'center' and 'justify'.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>valign</name>
+            <description>Sets column vertical alignment Possible values are: 'baseline', 'sub', 'super', 'top', 'text-top', 'middle', 'bottom', 'text-bottom'.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>sort</name>
+            <description>Sets column sorting. Possible values are: 'str' (data will be sorted as strings case sensitive), 'int' data will be sorted as numbers, 'date' data will be sorted as a date and 'na' sorting is not available for a column.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>width</name>
+            <description>Sets the initial width of columns in pixels</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>treegrid</name>
+        <display-name>dhtmlx:treegrid</display-name>
+        <description>The Tree grid component displays items with multiple attributes in a hierarchial view. </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.TreeGridTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the treegrid</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>The HTML object of the page to which the treegrid is attached</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageURL</name>
+            <description>Image URL</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>        
+        <attribute>
+            <name>onXLS</name>
+            <description>User defined function invoked before the request for a new XML was sent to the server.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLE</name>
+            <description>User defined function invoked when items are available in the grid.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onRowSelect</name>
+            <description>User defined function invoked when a row in the grid is clicked.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onRowDblClicked</name>
+            <description>User defined function invoked when right after a row was double clicked</description>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>init</name>
+            <description>Perform initialization true|false default true</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>        
+        <attribute>
+            <name>xml</name>
+            <description>load tabbar from xml file</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+
+    </tag>
+
+    <tag>
+        <name>toolbar</name>
+        <display-name>dhtmlx:toolbar</display-name>
+        <description>Enables to create a horizontal toolbar with several button types (image, text button, two-state button, select box, slider, input box).</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the toolbar</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>The HTML object of the page to which the toolbar is attached</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>iconsPath</name>
+            <description>Path of toolbar images</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onClick</name>
+            <description>User defined function invoked when a button on the toolbar is clicked.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onStateChange</name>
+            <description>User defined function invoked when a button on the toolbar changes status.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onValueChange</name>
+            <description>User defined function invoked when a value on the toolbar changes.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onEnter</name>
+            <description>User defined function invoked when the enter key is pressed.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLS</name>
+            <description>User defined function invoked before the request for a new XML was sent to the server.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLE</name>
+            <description>User defined function invoked when items are available in the tree.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>xml</name>
+            <description>Load toolbar from xml file</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>                
+    </tag>
+
+    <tag>
+        <name>toolbarText</name>
+        <display-name>dhtmlx:toolbarText</display-name>
+        <description>Toolbar header type</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarTextTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id fo the header</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Text</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position within the toolbar</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>toolbarSeparator</name>
+        <display-name>dhtmlx:toolbarSeparator</display-name>
+        <description>Toolbar item separator</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarSeparatorTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id fo the header</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position within the toolbar</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>toolbarButton</name>
+        <display-name>dhtmlx:toolbarButton</display-name>
+        <description>Toolbar button</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarButtonTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id fo the header</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Text</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position within the toolbar</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageEnabled</name>
+            <description>Image when the button is enabled</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageDisabled</name>
+            <description>Image when the button is disabled</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>title</name>
+            <description>Tooltip</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>toolbarButtonTwoState</name>
+        <display-name>dhtmlx:toolbarButtonTwoState</display-name>
+        <description>Toolbar button with two states</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarButtonTwoStateTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id fo the header</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Text</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position within the toolbar</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageEnabled</name>
+            <description>Image when the button is enabled</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageDisabled</name>
+            <description>Image when the button is disabled</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>title</name>
+            <description>Tooltip</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+
+    </tag>
+
+    <tag>
+        <name>toolbarButtonSelect</name>
+        <display-name>dhtmlx:toolbarButtonSelect</display-name>
+        <description>Toolbar button with selection</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarButtonSelectTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id of the header</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Text</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position within the toolbar</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageEnabled</name>
+            <description>Image when the button is enabled</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageDisabled</name>
+            <description>Image when the button is disabled</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>width</name>
+            <description>Width</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>title</name>
+            <description>Tooltip</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+
+    </tag>
+
+    <tag>
+        <name>toolbarListOption</name>
+        <display-name>dhtmlx:toolbarListOption</display-name>
+        <description>Toolbar button selection item</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarListOptionTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id fo the header</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>type</name>
+            <description>Type of a listed option button or separator</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Text</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position within the list</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>image</name>
+            <description>Image for the option</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>title</name>
+            <description>Tooltip</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+
+    </tag>
+
+    <tag>
+        <name>toolbarInput</name>
+        <display-name>dhtmlx:toolbarInput</display-name>
+        <description>Toolbar input header field</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarInputTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id of the header</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position within the list</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>value</name>
+            <description>Value</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>width</name>
+            <description>Width</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+          <name>title</name>
+          <description>Tooltip</description>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>        
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+
+    </tag>
+
+    <tag>
+        <name>toolbarSlider</name>
+        <display-name>dhtmlx:toolbarSlider</display-name>
+        <description>Toolbar slider.</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.ToolbarSliderTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id of the slider</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position within the toolbar</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>width</name>
+            <description>Width of a slider in px (defalut 100px)</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>min</name>
+            <description>Minimal available value of a slider (default 0)</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>max</name>
+            <description>Maximal available value of a slider (default 100)</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>initial</name>
+            <description>Initial current value of a slider (default 50)</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>minText</name>
+            <description>Label for minimal value side on the left side (defalut '')</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>maxText</name>
+            <description>Label for maximal value side on the right side (default '')</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>tooltip</name>
+            <description>Tooltip template (%v will replaced with current value)</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>          
+    </tag>
+
+
+    <tag>
+        <name>menu</name>
+        <display-name>dhtmlx:menu</display-name>
+        <description>The menu provides a solution for web navigation.</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.MenuTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the menu</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>        
+        <attribute>
+            <name>id</name>
+            <description>The HTML object of the page to which the menu is attached</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>iconsPath</name>
+            <description>Path of menu images</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onClick</name>
+            <description>User defined function invoked when an item on the menu is clicked.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onRadioClick</name>
+            <description>User defined function invoked when the user clicks any radio item.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onCheckboxClick</name>
+            <description>User defined function invoked when the user clicks any checkbox item.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLS</name>
+            <description>User defined function invoked before the request for a new XML was sent to the server.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLE</name>
+            <description>User defined function invoked when items are available in the tree.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>xml</name>
+            <description>Load menu from xml</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+      <tag>
+        <name>menuSibling</name>
+        <display-name>dhtmlx:menuSibling</display-name>
+        <tag-class>com.mylaensys.dhtmlx.tags.MenuSiblingTag</tag-class>
+        <description>Represent a menu sibiling.</description>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id of the item</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>nextTo</name>
+            <description>Id of the element after which a new one will be inserted</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Text of a the item</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>disabled</name>
+            <description>True|false, whether the item is disabled or not</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageEnabled</name>
+            <description>Image for the enabled item</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageDisabled</name>
+            <description>Image for the disabled item</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+      <tag>
+        <name>menuChild</name>
+        <display-name>dhtmlx:menuChild</display-name>
+        <description>Represent a child menu.</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.MenuChildTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>id</name>
+            <description>Id of the item</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <description>Position of a the item</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <description>Text of a the item</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>disabled</name>
+            <description>True|false, whether the item is disabled or not</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageEnabled</name>
+            <description>Image for the enabled item</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imageDisabled</name>
+            <description>Image for the disabled item</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+     <tag>
+      <name>menuRadioButton</name>
+      <display-name>dhtmlx:menuRadioButton</display-name>
+        <description>Represent a radio button item.</description>
+      <tag-class>com.mylaensys.dhtmlx.tags.MenuRadioButtonTag</tag-class>
+      <bodycontent>JSP</bodycontent>
+      <attribute>
+          <name>id</name>
+          <description>Id of the radio button</description>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+          <name>text</name>
+          <description>Text of the radio button</description>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>             
+      <attribute>
+          <name>position</name>
+          <description>Position of the item</description>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+          <name>group</name>
+          <description>Group of the radio button</description>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+          <name>state</name>
+          <description>Checked|unchecked</description>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+          <name>disabled</name>
+          <description>True|false</description>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+      <name>menuCheckBox</name>
+      <display-name>dhtmlx:menuCheckBox</display-name>
+        <description>Represent a check box item.</description>
+      <tag-class>com.mylaensys.dhtmlx.tags.MenuCheckBoxTag</tag-class>
+      <bodycontent>JSP</bodycontent>
+      <attribute>
+          <name>id</name>
+          <description>Id of the radio button</description>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+          <name>text</name>
+          <description>Text of the radio button</description>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+        <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+      <attribute>
+          <name>position</name>
+          <description>Position of the item</description>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>     
+      <attribute>
+          <name>state</name>
+          <description>Checked|unchecked</description>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+          <name>disabled</name>
+          <description>True|false</description>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+      <name>menuSeparator</name>
+      <display-name>dhtmlx:menuSeparator</display-name>
+      <description>Represent a menu separator item.</description>
+      <tag-class>com.mylaensys.dhtmlx.tags.MenuSeparatorTag</tag-class>
+      <bodycontent>JSP</bodycontent>
+      <attribute>
+          <name>nextTo</name>
+          <description>Id of the element after which a new one will be inserted</description>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+    </tag>
+
+    <tag>
+        <name>security</name>
+        <display-name>dhtmlx:security</display-name>
+        <description>
+            Container for security used to render contents only to users that have the rights.
+        </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.SecurityTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>hasRole</name>
+            <description>Security constraint based on user role</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasPermission</name>
+            <description>Security constraint based on user permissions</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>securityGranted</name>
+        <display-name>dhtmlx:securityGranted</display-name>
+        <description>
+            Container for contents to render when the user has the rights.
+        </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.SecurityGrantedTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+    </tag>
+
+    <tag>
+        <name>securityDenied</name>
+        <display-name>dhtmlx:securityDenied</display-name>
+        <description>
+            Container for contents to render when the user does not own the rights.
+        </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.SecurityDeniedTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+    </tag>
+
+
+    <tag>
+        <name>tree</name>
+        <display-name>dhtmlx:tree</display-name>
+        <description>
+            The tree component shows the hiearchial structure of content, which is easy to understand.
+        </description>
+        <tag-class>com.mylaensys.dhtmlx.tags.TreeTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the tree</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <description>The HTML object of the page to which the tree is attached</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>imagePath</name>
+            <description>Path to image folder.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>width</name>
+            <description>Width of the tree (default = 100%)</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>height</name>
+            <description>Height of the tree (default = 100%)</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>root</name>
+            <description>Identifier of the tree root level (detault = 0)</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLS</name>
+            <description>User defined function invoked before the request for a new XML was sent to the server.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onXLE</name>
+            <description>User defined function invoked when items are available in the tree.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onSelect</name>
+            <description>User defined function invoked when a row in the tree is selected.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onClick</name>
+            <description>User defined function invoked when the text part of a tree item was clicked.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onDblClick</name>
+            <description>User defined function invoked when a tree item was double clicked.</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>xml</name>
+            <description>Load tree from xml file</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>skin</name>
+            <description>Sets the appearance. Predefined skins are: dhx_skyblue (default), dhx_blue, dhx_black and dhx_web.</description>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>statusbar</name>
+        <display-name>dhtmlx:statusbar</display-name>
+        <description>The status bar.</description>
+        <tag-class>com.mylaensys.dhtmlx.tags.StatusBarTag</tag-class>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <description>Name of the statusbar</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>        
+    </tag>
+
+
+    <tag>
+          <name>form</name>
+          <display-name>dhtmlx:form</display-name>
+          <description>Form.</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the form</description>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>id</name>
+              <description>id or an object that will be used as parent container</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+      </tag>
+
+
+      <tag>
+          <name>formLabel</name>
+          <display-name>dhtmlx:formLabel</display-name>
+          <description>Form Label</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormLabelTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the label</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>labelWidth</name>
+              <description>Label widht</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>offsetLeft</name>
+              <description>Left Offset</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+          <attribute>
+            <name>className</name>
+            <description>User defined css for the item</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+      </tag>
+
+      <tag>
+          <name>formInput</name>
+          <display-name>dhtmlx:formInput</display-name>
+          <description>Form Input</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormInputTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the field</description>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+          <attribute>
+              <name>value</name>
+              <description>Value</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>width</name>
+              <description>The width of the element</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>align</name>
+              <description>the align of the header in input (left/right)</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>labelWidth</name>
+              <description>Label width</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>labelAlign</name>
+              <description>Label width</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>validate</name>
+              <description>validate</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+      </tag>
+      <tag>
+          <name>formInputArea</name>
+          <display-name>dhtmlx:formInputArea</display-name>
+          <description>Form Input Area</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormInputTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the field</description>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+          <attribute>
+              <name>value</name>
+              <description>Value</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>width</name>
+              <description>The width of the element</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>rows</name>
+              <description>Number of rows</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>align</name>
+              <description>the align of the header in input (left/right)</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+      </tag>
+      <tag>
+          <name>formInputPassword</name>
+          <display-name>dhtmlx:formInputPassword</display-name>
+          <description>Form Input Password</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormPasswordTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the field</description>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+          <attribute>
+              <name>value</name>
+              <description>Value</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>width</name>
+              <description>The width of the element</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>align</name>
+              <description>the align of the header in input (left/right)</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+      </tag>
+
+    <tag>
+          <name>formInputFieldSet</name>
+          <display-name>dhtmlx:formInputFieldSet</display-name>
+          <description>Form Field Set</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormFieldSetTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the field</description>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>width</name>
+              <description>The width of the element</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+
+     <tag>
+          <name>formRadioButton</name>
+          <display-name>dhtmlx:formRadioButton</display-name>
+          <description>Form Radio Button</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormRadioButtonTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the field</description>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>value</name>
+              <description>Value</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>checked</name>
+              <description>the state of the radio element (true/false)</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+          <name>formCheckBox</name>
+          <display-name>dhtmlx:formCheckBox</display-name>
+          <description>Form Check Box</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormCheckBoxTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the field</description>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>value</name>
+              <description>Value</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>checked</name>
+              <description>the state of the radio element (true/false)</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+    <tag>
+          <name>formSelect</name>
+          <display-name>dhtmlx:formSelect</display-name>
+          <description>Form Select</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormSelectTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>Name of the field</description>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>width</name>
+              <description>Width</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+        <name>formSelectOption</name>
+          <display-name>dhtmlx:formSelectOption</display-name>
+          <description>Form Select Option</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormSelectOptionTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>text</name>
+              <description>Text of the option</description>
+              <required>true</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>value</name>
+              <description>The value of the element</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>selected</name>
+              <description></description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+    <tag>
+        <name>formButton</name>
+          <display-name>dhtmlx:formButton</display-name>
+          <description>Form Button</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormButtonTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>the name of the element</description>
+              <required>true</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>value</name>
+              <description>The value of the element</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>command</name>
+              <description>the default action for a button</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+        <name>formFile</name>
+          <display-name>dhtmlx:formFile</display-name>
+          <description>Form File</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormFileTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>the name of the element</description>
+              <required>true</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>label</name>
+              <description>Label</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>i18n</name>
+            <description>True|false if i18n has to be applied</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+        <name>formHidden</name>
+          <display-name>dhtmlx:formHidden</display-name>
+          <description>Form Hidden</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormHiddenTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>the name of the element</description>
+              <required>true</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>value</name>
+              <description>value</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+
+
+    <tag>
+        <name>lineChart</name>
+          <display-name>dhtmlx:lineChart</display-name>
+          <description>Line Chart</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.LineChartTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>the name of the element</description>
+              <required>true</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+        <attribute>
+           <name>id</name>
+           <description>The id of an HTML container</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+        <attribute>
+            <name>value</name>
+            <description>Property of dataset that chart represent</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+           <name>label</name>
+           <description>A template for item labels</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+        <attribute>
+           <name>tooltip</name>
+           <description>A template for item tooltip</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+        <attribute>
+           <name>i18n</name>
+           <description>A template for item tooltip</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+    </tag>
+
+    <tag>
+        <name>areaChart</name>
+          <display-name>dhtmlx:areaChart</display-name>
+          <description>Area Chart</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.AreaChartTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>name</name>
+              <description>the name of the element</description>
+              <required>true</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+        <attribute>
+           <name>id</name>
+           <description>The id of an HTML container</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+        <attribute>
+            <name>value</name>
+            <description>Property of dataset that chart represent</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+           <name>label</name>
+           <description>A template for item labels</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+        <attribute>
+           <name>tooltip</name>
+           <description>A template for item tooltip</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+        <attribute>
+           <name>alpha</name>
+           <description>Area trasparency</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+        <attribute>
+           <name>color</name>
+           <description>Area color</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+        <attribute>
+           <name>i18n</name>
+           <description>A template for item tooltip</description>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+    </tag>
+
+     <tag>
+        <name>lineChartLine</name>
+          <display-name>dhtmlx:lineChartLine</display-name>
+          <description>Chart Line</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.LineChartLineTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>color</name>
+              <description>color of the line</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>width</name>
+              <description>width of the line</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+        <name>lineChartItem</name>
+          <display-name>dhtmlx:lineChartItem</display-name>
+          <description>Line Chart Item</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.LineChartItemTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>borderColor</name>
+              <description>outer color of the point</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>borderWidth</name>
+              <description>width of the border line</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>color</name>
+              <description>inner color of the point</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>radius</name>
+              <description>radius of the point</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+        <name>chartPadding</name>
+          <display-name>dhtmlx:chartPadding</display-name>
+          <description>Defines Padding</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.ChartPaddingTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>left</name>
+              <description>Left padding</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+            <attribute>
+                <name>top</name>
+                <description>Top padding</description>
+                <required>false</required>
+                <rtexprvalue>false</rtexprvalue>
+            </attribute>
+          <attribute>
+              <name>right</name>
+              <description>Right padding</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>bottom</name>
+              <description>Bottom padding</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+        <name>chartLegend</name>
+          <display-name>dhtmlx:chartLegend</display-name>
+          <description>Chart Legend</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.ChartLegendTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>width</name>
+              <description>A block width</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>align</name>
+              <description>an horizontal align of the block: 'left', 'right' or 'center'</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>valign</name>
+              <description>a vertical align of the block: 'top','bottom' or 'middle'</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+        <attribute>
+              <name>layout</name>
+              <description>a layout that defines text stretching in horizontal or vertical direction :'x' or 'y'</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+        <attribute>
+              <name>layout</name>
+              <description>a layout that defines text stretching in horizontal or vertical direction :'x' or 'y'</description>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+    </tag>
+
+
+    <tag>
+        <name>chartLegendMarker</name>
+          <display-name>dhtmlx:chartLegendMarker</display-name>
+          <description>Char Legend Marker</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.ChartLegendMarkerTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>type</name>
+              <description>Marker type: 'square' or 'round'</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>width</name>
+              <description>Marker width</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>height</name>
+              <description>Marker height</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+        <name>chartLegendText</name>
+          <display-name>dhtmlx:chartLegendText</display-name>
+          <description>Legend text</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.ChartLegendTextTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>text</name>
+              <description>Marker type: 'square' or 'round'</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>color</name>
+              <description>Marker type: 'square' or 'round'</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+    </tag>    
+
+    <tag>
+        <name>chartAxisX</name>
+          <display-name>dhtmlx:chartAxisX</display-name>
+          <description>X axis</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.ChartAxisXTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>title</name>
+              <description>Scale title</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>color</name>
+              <description>Scale color</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>template</name>
+              <description>Template of scale labels</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>lines</name>
+              <description>True|false enables/disables lines for scale units</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+    </tag>
+    <tag>
+        <name>chartAxisY</name>
+          <display-name>dhtmlx:chartAxisY</display-name>
+          <description>Y axis</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.ChartAxisYTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+          <attribute>
+              <name>title</name>
+              <description>Scale title</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>color</name>
+              <description>Scale color</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>start</name>
+              <description>Mininum value</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>step</name>
+              <description>Scale step</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+            <name>end</name>
+            <description>Maximum value</description>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>template</name>
+              <description>Template of scale labels</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>lines</name>
+              <description>True|false enables/disables lines for scale units</description>
+              <required>false</required>
+              <rtexprvalue>false</rtexprvalue>
+          </attribute>
+    </tag>
+
+    <tag>
+          <name>formNewColumn</name>
+          <display-name>dhtmlx:formNewColumn</display-name>
+          <description>New Column</description>
+          <tag-class>com.mylaensys.dhtmlx.tags.FormNewColumnTag</tag-class>
+          <bodycontent>JSP</bodycontent>
+    </tag>
+
+</taglib>

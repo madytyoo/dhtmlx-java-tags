@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu id="0">
+    <item header="First" id="first"/>
+    <item header="Second" id="second"/>
+    <item header="Third" id="third"/>
+    <item header="Other..." id="outher">
+        <item header="Other-First" id="other_first"/>
+        <item header="Other-Second" id="other_second"/>
+    </item>
+</menu>

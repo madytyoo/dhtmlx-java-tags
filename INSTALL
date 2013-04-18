@@ -1,0 +1,10 @@
+the  distribution jar  file as-is  to integrate  the Tag  Library in  your  web
+The tag library is distributed as a ready-to-run Java Archive (JAR). You can use
+application.
+
+* Copy  the dhtmlx-taglib-x.x.jar,stringtemplate-3.2.1.jar,antlr-3.2.jar  in the
+WEB-INF/lib directory of your web application.
+
+* Copy  the entire  DHTMLX Component Library  which all  components,  extensions
+and styles  combined within  dhtmlx.js,  dhtmlx.css  and folder   with necessary
+images  in the application pages directory.
